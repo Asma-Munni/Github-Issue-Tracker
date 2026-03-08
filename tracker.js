@@ -1,3 +1,25 @@
+const buttons = document.querySelectorAll("#buttons button");
+
+buttons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+
+        buttons.forEach((b) => {
+            b.classList.remove("bg-[#3b82f6]", "text-white");
+            b.classList.add("bg-[#e4e4e7]", "text-[#64748b]");
+        });
+
+        btn.classList.remove("bg-[#e4e4e7]", "text-[#64748b]");
+        btn.classList.add("bg-[#3b82f6]", "text-white");
+
+    });
+});
+
+
+
+
+
+
+
 
 // console.log(cardsContainer);
 const loadCards = () => {
@@ -51,13 +73,16 @@ const displayCards =(cards)=>{
     for(let card of cards){
         //create card
     const cardDiv = document.createElement("div");
+
+   
+  
     // innerhtml set
     cardDiv.innerHTML = `
-     <div id="card" class="space-y-3 p-3 shadow-sm">
+     <div id="card" class="space-y-3 p-3 shadow-sm h-full">
         <div class="flex justify-between">
             <img src="./B13-A5-Github-Issue-Tracker/assets/Open-Status.png" alt="">
             <!--badge-->
-            <div onclick="loadCardDetail(${card.id})" class="badge badge-soft badge-secondary">${card.priority}</div>
+            <div onclick="loadCardDetail(${card.id})" class="badge  badge-soft badge-secondary ">${card.priority}</div>
         </div>
         <h3 class="text-[#1f2937] font-semibold text-[14px]">${card.title}</h3>
         <p class="text-[#64748b] text-[12px]">${card.description}</p>  
@@ -75,6 +100,8 @@ const displayCards =(cards)=>{
                    `;
         //append into container
   cardsContainer.appendChild(cardDiv);
+ 
+ 
 };
     };
    
