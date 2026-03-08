@@ -36,11 +36,11 @@
     <div>
     <label class="input validator join-item">
      
-      <input type="email" placeholder="  Search Issue" required />
+      <input id="searchInput" type="email" placeholder="  Search Issue" required />
     </label>
     <div class="validator-hint hidden">Enter valid email address</div>
   </div>
-  <button class="btn btn-primary join-item">+ New Issue</button>
+  <button onclick="searchIssue()" class="btn btn-primary join-item">+ New Issue</button>
 </div></div>
         </div>
     </nav>
@@ -59,7 +59,7 @@
                 <img src="./B13-A5-Github-Issue-Tracker/assets/Aperture.png" alt="">
             </div>
             <div>
-                <h3 class="text-[20px] font-semibold text-[#1f2937]">50 Issues</h3>
+                <h3 id="issueCount" class="text-[20px] font-semibold text-[#1f2937]">50 Issues</h3>
                 <p class="text-[#64748b] text-[16px]">Track and manage your project issues</p>
             </div>
         </div>

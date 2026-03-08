@@ -78,11 +78,13 @@ const displayCards =(cards)=>{
   
     // innerhtml set
     cardDiv.innerHTML = `
-     <div id="card" class="space-y-3 p-3 shadow-sm h-full">
+     <div id="card" class="space-y-3 p-3 border-t-4 border-t-[#00a96e] ${card.priority==="low" ? "border-t-[#a855f7]" : ""} shadow-sm h-full rounded-md">
         <div class="flex justify-between">
             <img src="./B13-A5-Github-Issue-Tracker/assets/Open-Status.png" alt="">
             <!--badge-->
-            <div onclick="loadCardDetail(${card.id})" class="badge  badge-soft badge-secondary ">${card.priority}</div>
+            <div onclick="loadCardDetail(${card.id})" class="badge  badge-soft ${card.priority=== "medium" ? "bg-[#fff6d1] text-[#f59e0b]" : 
+            card.priority==="low" ? "bg-[#eeeff2] text-[#9ca3af]"
+            : ""} badge-secondary ">${card.priority}</div>
         </div>
         <h3 class="text-[#1f2937] font-semibold text-[14px]">${card.title}</h3>
         <p class="text-[#64748b] text-[12px]">${card.description}</p>  
@@ -104,5 +106,24 @@ const displayCards =(cards)=>{
  
 };
     };
+
+//search issue load and display
+    const searchIssue = () => {
+
+const searchText = document.getElementById("searchInput").value;
+
+const url = `https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${searchText}`;
+
+fetch(url)
+.then(res => res.json())
+.then((json) => {
+    displayCards(json.data);
+
+    // issue count change
+    document.getElementById("issueCount").innerText =
+    json.data.length + " Issues";
+});
+
+};
    
 loadCards();
