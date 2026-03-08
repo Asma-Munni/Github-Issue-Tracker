@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,68 +8,73 @@
 
     <!--Daisy UI Link-->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
-<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
-<!--font family-->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+    <!--font family-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
 
-<style>
-    *{
-        font-family: "Geist", sans-serif;
-    }
-</style>
+    <style>
+        * {
+            font-family: "Geist", sans-serif;
+        }
+    </style>
 </head>
+
 <body class="bg-[#f8fafc]">
 
-    <section id="createAcount" class="w-10/12 max-w-md mx-auto p-3 bg-white shadow-sm ">
-        
-         <div class="text  bg-white p-2 space-y-2  ">
-                <div class=" flex  flex-col justify-center items-center font-bold text-2xl text-[#005ce0] gap-2">
-                    <div class="h-10 w-10"><img src="./B13-A5-Github-Issue-Tracker/assets/github-logo.png" alt=""></div>
-                    
-                    <h2>GitHub Issues Tracker</h2>
-                    <p>Sign in to manage your issues</p>
+    <section id="createAcount" class="w-10/12 max-w-md mx-auto p-3   container   ">
+
+        <div class="text bg-white p-2 space-y-1 shadow-sm">
+            <div class=" flex  flex-col justify-center items-center font-bold text-2xl text-[#005ce0] gap-2">
+                <div class="h-10 w-10"><img src="./B13-A5-Github-Issue-Tracker/assets/github-logo.png" alt=""></div>
+
+                <h2>GitHub Issues Tracker</h2>
+                <p>Sign in to manage your issues</p>
+            </div>
+
+
+            <div class="card bg-base-100 w-full max-w-sm  mx-auto">
+                <div class="card-body">
+                    <fieldset class="fieldset space-y-1">
+
+                        <!--enter name-->
+                        <label for="">Username</label>
+                        <input id="input-name" class="bg-[#fafbfe] px-6 py-3 rounded-[10px]" type="email"
+                            placeholder="Enter user name" required />
+                        <p class="text-[#4a00ff]">Default: admin</p>
+
+                        <!--password-->
+
+                        <label for="">Password</label>
+                        <input id="input-password" class="bg-[#fafbfe] px-6 py-3 rounded-[10px]" type="password"
+                            placeholder="Password" required />
+                        <p class="text-[#4a00ff]">Default: admin123</p>
+
+
+                        <button id="signBtn" class="btn bg-[#498ae7] text-[#fafbfe] mt-2 rounded-[30px]">Sign
+                            In</button>
+                    </fieldset>
+
                 </div>
-               
-               
-    <div class="card bg-base-100 w-full max-w-sm  mx-auto">
-      <div class="card-body">
-        <fieldset class="fieldset space-y-2">
-          
-      <!--enter name-->   
-   <label for="">Username</label>
-  <input id="input-name" class="bg-[#fafbfe] px-6 py-3 rounded-[10px]" type="email" placeholder="Enter user name" required />
-  <p class="text-[#4a00ff]">Default: admin</p>
+                <!--devider-->
+                <div class="divider ">or</div>
 
-  <!--password-->
-          
- <label for="">Password</label>
-  <input id="input-password" class="bg-[#fafbfe] px-6 py-3 rounded-[10px]" type="password" placeholder="Password" required />
-  <p class="text-[#4a00ff]">Default: admin123</p>
+            </div>
 
+            <div class="flex flex-col justify-center items-center space-y-2 ">
+                <p class="text-[14px] text-[#64748b]">Demo Credentials:</p>
+                <div class="bg-[#f8fafc] px-28 py-1 rounded-sm ">
+                    <p> Username <span class="text-[14px] text-[#64748b]">:admin</span></p>
+                    <p>Password <span class="text-[14px] text-[#64748b]">:admin123</span></p>
+                </div>
+            </div>
+        </div>
 
- <button id="signBtn" class="btn bg-[#498ae7] text-[#fafbfe] mt-4 rounded-[30px]">Sign In</button>
-        </fieldset>
-        
-     </div>
-      <!--devider-->
-      <div class="divider ">or</div>
-    
-     </div>
-         
-    <div class="flex flex-col justify-center items-center space-y-2 ">
-        <p class="text-[14px] text-[#64748b]">Demo Credentials:</p>
-        <div class="bg-[#f8fafc] px-28 py-2 rounded-sm ">
-            <p> Username <span class="text-[14px] text-[#64748b]">:admin</span></p>
-            <p>Password <span class="text-[14px] text-[#64748b]">:admin123</span></p>
-         </div>
-    </div>  
-    </div>      
-       
     </section>
 
     <script src="./script.js"></script>
 </body>
+
 </html>

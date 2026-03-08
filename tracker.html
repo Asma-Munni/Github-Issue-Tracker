@@ -45,6 +45,53 @@
         </div>
     </nav>
  </header>
-   
+<!--All buttons here-->
+ <div id="buttons " class="w-11/12 mx-auto p-3 bg-white shadow-xl flex gap-2 items-center mt-3">
+    <button onclick="toggleStyle('all-filter-btn')" id="all-filter-btn" class="px-3 py-2 bg-[#3b82f6] text-white rounded-md w-[80px]">All</button>
+     <button onclick="toggleStyle('all-filter-btn')" id="all-filter-btn" class="px-3 py-2 bg-[#e4e4e7] text-[#64748b] rounded-md w-[80px]">Open</button>
+      <button onclick="toggleStyle('all-filter-btn')" id="all-filter-btn" class="px-3 py-2 bg-[#e4e4e7] text-[#64748b] rounded-md w-[80px]">Closed</button>
+ </div>
+ <!--Mainsection-->
+ <main class="w-11/12 mx-auto p-3 bg-white shadow-sm mt-3">
+    <div class="flex justify-between shadow-xl border-b border-b-gray-300 ">
+        <div class="left flex gap-2 items-center">
+            <div class=" ">
+                <img src="./B13-A5-Github-Issue-Tracker/assets/Aperture.png" alt="">
+            </div>
+            <div>
+                <h3 class="text-[20px] font-semibold text-[#1f2937]">50 Issues</h3>
+                <p class="text-[#64748b] text-[16px]">Track and manage your project issues</p>
+            </div>
+        </div>
+        <div class="right flex gap-2">
+            <div class="flex items-center"><img src="./B13-A5-Github-Issue-Tracker/assets/Open-Status.png" alt="">
+                <p>Open</p>
+            </div>
+            <div class="flex items-center"><img src="./B13-A5-Github-Issue-Tracker/assets/Closed- Status .png" alt="">
+                <p>Closed</p>
+            </div>
+        </div>
+    </div>
+  <!--card div-->
+    <div id="cardsContainer" class="card card-body shadow-2xl  grid grid-cols-4 gap-2 bg-[#fbfbfb]">
+       
+    </div>
+ </main>
+ <!-- Open the modal using ID.showModal() method -->
+  <!--<button class="btn" onclick="my_modal_5.showModal()">open modal</button>-->
+
+<dialog id="card_modal" class="modal modal-bottom sm:modal-middle">
+  <div class="modal-box">
+   <div id="detailsContainer"></div>
+    <div class="modal-action">
+      <form method="dialog">
+        <!-- if there is a button in form, it will close the modal -->
+        <button class="btn">Close</button>
+      </form>
+    </div>
+  </div>
+</dialog>
+
+   <script src="./tracker.js"></script>
 </body>
 </html>
