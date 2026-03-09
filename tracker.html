@@ -51,6 +51,8 @@
      <button  id="openBtn" onclick="filterIssues('open')" class="px-3 py-2 bg-[#e4e4e7] text-[#64748b] rounded-md w-[80px]">Open</button>
       <button  id="closedBtn" onclick="filterIssues('closed')" class="px-3 py-2 bg-[#e4e4e7] text-[#64748b] rounded-md w-[80px]">Closed</button>
  </div>
+ <!--spinner-->
+ <span id="spinner" class="loading loading-dots loading-xl"></span>
  <!--Mainsection-->
  <main class="w-11/12 mx-auto p-3 bg-white shadow-sm mt-3">
     <div class="flex justify-between shadow-xl border-b border-b-gray-300 ">
@@ -77,6 +79,9 @@
        
     </div>
  </main>
+
+ 
+
  <!-- Open the modal using ID.showModal() method -->
   <!--<button class="btn" onclick="my_modal_5.showModal()">open modal</button>-->
 

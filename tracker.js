@@ -16,26 +16,44 @@ buttons.forEach((btn) => {
 });
 
 
+//spinner function
+const manageSpinner = (status) => {
 
+if(status){
+document.getElementById("spinner").classList.remove("hidden");
+}
 
+else{
+document.getElementById("spinner").classList.add("hidden");
+}
+
+};
 
 
 
 
 // console.log(cardsContainer);
 const loadCards = () => {
+    manageSpinner(true);
   fetch("https://phi-lab-server.vercel.app/api/v1/lab/issues")
   .then(res => res.json())
-  .then((json) => displayCards(json.data));
+  .then((json) =>
+     { displayCards(json.data)
+     manageSpinner(false)
+  });
+  
+
 };
 
 //load every single card on modal
 const loadCardDetail =async(id)=>{
+    
   const url=`https://phi-lab-server.vercel.app/api/v1/lab/issue/${id}`;
  // console.log(url);
   const res = await fetch(url);
   const details = await res.json();
   displayCardDetail(details.data);
+
 };
 
 //display every single card on modal
