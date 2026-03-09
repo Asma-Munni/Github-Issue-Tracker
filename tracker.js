@@ -1,3 +1,4 @@
+let allCards =[];
 const buttons = document.querySelectorAll("#buttons button");
 
 buttons.forEach((btn) => {
@@ -71,6 +72,7 @@ const displayCards =(cards)=>{
     cardsContainer.innerHTML ="";
     // get  into every card
     for(let card of cards){
+       
         //create card
     const cardDiv = document.createElement("div");
 
@@ -78,7 +80,7 @@ const displayCards =(cards)=>{
   
     // innerhtml set
     cardDiv.innerHTML = `
-     <div id="card" class="space-y-3 p-3 border-t-4 border-t-[#00a96e] ${card.priority==="low" ? "border-t-[#a855f7]" : ""} shadow-sm h-full rounded-md">
+     <div id="card" class="space-y-3 p-3 border-t-4 border-t-[#00a96e] ${card.status==="closed" ? "border-t-[#a855f7]" : ""} shadow-sm h-full rounded-md">
         <div class="flex justify-between">
             <img src="./B13-A5-Github-Issue-Tracker/assets/Open-Status.png" alt="">
             <!--badge-->
@@ -103,10 +105,34 @@ const displayCards =(cards)=>{
         //append into container
   cardsContainer.appendChild(cardDiv);
  
- 
+ // count issue update
+ document.getElementById("issueCount").innerText =
+cards.length + " Issues";
 };
     };
 
+  // filter card
+ const filterIssues = (type) => {
+
+fetch("https://phi-lab-server.vercel.app/api/v1/lab/issues")
+.then(res => res.json())
+.then((json) => {
+
+let cards = json.data;
+
+if(type === "open"){
+cards = cards.filter(card => card.status === "open");
+}
+
+else if(type === "closed"){
+cards = cards.filter(card => card.status === "closed");
+}
+
+displayCards(cards);
+
+});
+
+};
 //search issue load and display
     const searchIssue = () => {
 
@@ -126,4 +152,4 @@ fetch(url)
 
 };
    
-loadCards();
+loadCards(); 
