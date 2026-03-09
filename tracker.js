@@ -18,15 +18,14 @@ buttons.forEach((btn) => {
 
 //spinner function
 const manageSpinner = (status) => {
-
-if(status){
-document.getElementById("spinner").classList.remove("hidden");
-}
-
-else{
-document.getElementById("spinner").classList.add("hidden");
-}
-
+    const spinner = document.getElementById("spinner");
+    if (spinner) { 
+        if (status === true) {
+            spinner.classList.remove("hidden"); 
+        } else {
+            spinner.classList.add("hidden"); 
+        }
+    }
 };
 
 
@@ -39,7 +38,7 @@ const loadCards = () => {
   .then(res => res.json())
   .then((json) =>
      { displayCards(json.data)
-     manageSpinner(false)
+    manageSpinner(false); 
   });
   
 
@@ -79,6 +78,8 @@ detailsDiv.innerHTML =`<div id="card" class="space-y-3 p-3 shadow-sm">
              <p class="text-[12px] text-[#64748b]">1/15/2024</p>
             </div>
         </div>`;
+
+        
        // detailsContainer.appendChild(detailsDiv);
 document.getElementById("card_modal").showModal();
 }
@@ -122,6 +123,7 @@ const displayCards =(cards)=>{
                    `;
         //append into container
   cardsContainer.appendChild(cardDiv);
+  
  
  // count issue update
  document.getElementById("issueCount").innerText =
