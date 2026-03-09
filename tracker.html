@@ -46,7 +46,7 @@
     </nav>
  </header>
 <!--All buttons here-->
- <div id="buttons"  class="w-11/12 mx-auto p-3 bg-white shadow-xl flex gap-2 items-center mt-3">
+ <div id="buttons"  class="w-11/12 mx-auto p-3 bg-white shadow-xl flex flex-wrap gap-2 items-center mt-3">
     <button id="allBtn" onclick="filterIssues('all')" class="px-3 py-2 bg-[#3b82f6] text-white rounded-md w-[80px]">All</button>
      <button  id="openBtn" onclick="filterIssues('open')" class="px-3 py-2 bg-[#e4e4e7] text-[#64748b] rounded-md w-[80px]">Open</button>
       <button  id="closedBtn" onclick="filterIssues('closed')" class="px-3 py-2 bg-[#e4e4e7] text-[#64748b] rounded-md w-[80px]">Closed</button>
@@ -57,7 +57,7 @@
 </div>
  <!--Mainsection-->
  <main class="w-11/12 mx-auto p-3 bg-white shadow-sm mt-3">
-    <div class="flex justify-between shadow-xl border-b border-b-gray-300 ">
+    <div class="flex flex-wrap justify-between shadow-xl border-b border-b-gray-300 ">
         <div class="left flex gap-2 items-center">
             <div class=" ">
                 <img src="./B13-A5-Github-Issue-Tracker/assets/Aperture.png" alt="">
@@ -77,7 +77,7 @@
         </div>
     </div>
   <!--card div-->
-    <div id="cardsContainer" class="card card-body shadow-2xl  grid grid-cols-4 gap-2 bg-[#fbfbfb]">
+    <div id="cardsContainer" class=" card card-body shadow-2xl  grid grid-cols-2 md:grid-cols-4 gap-2 bg-[#fbfbfb]">
        
     </div>
  </main>

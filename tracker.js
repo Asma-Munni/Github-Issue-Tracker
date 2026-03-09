@@ -60,15 +60,11 @@ const displayCardDetail =(card)=>{
 console.log(card);
 const detailsDiv = document.getElementById("detailsContainer");
 detailsDiv.innerHTML =`<div id="card" class="space-y-3 p-3 shadow-sm">
-        <div class="flex justify-between">
-            <img src="./B13-A5-Github-Issue-Tracker/assets/Open-Status.png" alt="">
-            <!--badge-->
-            <div onclick="loadCardDetail(${card.id})" class="badge badge-soft badge-secondary">${card.priority}</div>
-        </div>
+       
         <h3 class="text-[#1f2937] font-semibold text-[14px]">${card.title}</h3>
         <p class="text-[#64748b] text-[12px]">${card.description}</p>  
         <!--2 badges-->
-        <div class=" flex">
+        <div class=" flex flex-wrap">
             <div class="badge badge-soft badge-secondary"><img src="./B13-A5-Github-Issue-Tracker/assets/BugDroid.png" alt=""> BUG</div>
             <div class="badge badge-soft badge-warning text-[12px]"><img src="./B13-A5-Github-Issue-Tracker/assets/Vector (1).png" alt=""> HELP WANTED</div>   
         </div>
